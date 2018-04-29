@@ -45,14 +45,6 @@ function newgame()
             }
     }
 
-    for(var i = 0; i < images.length; i++)
-    {
-        if(images[i] == pickedwordarray[i])
-        {
-            $image.innerHTML = '<img src="'+ images[i] +'">';
-        }
-    }
-
     $guessesleft.textContent = guessesleft;
     $placeholders.textContent = pickedwordarray.join('');
     $guessedletters.textContent = incorrectletterlist;
@@ -97,18 +89,17 @@ function checkIncorrect(letter)
           checkLose(); 
 }
 
-
-
 function checkLose()
 {
-    
+  
     if(guessesleft == 0)
-            {   
-                losses++;          
-                $losses.textContent = losses;
-                alert("Oops you lose. The word was: " + pickedword);
-            }           
-            checkWin();           
+        {   
+            losses++;          
+            $losses.textContent = losses;
+            alert("Oops you lose. The word was: " + pickedword);
+            newgame();
+        }           
+        checkWin();           
 }
 
 function checkWin()
@@ -116,7 +107,8 @@ function checkWin()
     if(pickedword.toLowerCase() === pickedwordarray.join('').toLowerCase())
     {
         wins++;  
-        $wins.textContent = wins;    
+        $wins.textContent = wins; 
+        newgame();   
     }
 }
 
