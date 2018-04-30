@@ -19,7 +19,7 @@ var wordlist= ['apple','bananas','grapes','peach','pineapple','strawberry', 'bla
 
 var wins = 0;
 var losses = 0;
-var guessesleft = 9;
+var guessesleft = 15;
 var pickedword = '';
 var pickedwordarray = [];
 var guessedletterslist = [];
