@@ -28,7 +28,7 @@ var incorrectletterlist = [];
 
 function newgame()
 {
-    guessesleft = 9;
+    guessesleft = 15;
     guessedletterslist = [];
     incorrectletterlist = [];
     pickedwordarray = [];
