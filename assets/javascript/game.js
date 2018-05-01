@@ -33,6 +33,7 @@ function newgame()
     incorrectletterlist = [];
     pickedwordarray = [];
 
+
     pickedword = wordlist[Math.floor(Math.random() * wordlist.length)];
 
     for(var i = 0; i < pickedword.length; i++)
@@ -46,14 +47,23 @@ function newgame()
                 pickedwordarray.push(' _');
                 
             }
+
+
     }
 
     $guessesleft.textContent = guessesleft;
     $placeholders.textContent = pickedwordarray.join('');
     $guessedletters.textContent = incorrectletterlist;
+    document.getElementById('imagedisplay').innerHTML = "";
 }
 
+function showimage(pickedword)
+{
+    var image = document.createElement("img");
+    image.setAttribute("src","./assets/images/" + pickedword + ".jpg");
+    document.getElementById("imagedisplay").append(image);
 
+}
 
 function letterGuess(letter)
 {
@@ -112,8 +122,9 @@ function checkWin()
     {
         wins++;  
         $wins.textContent = wins; 
-        newgame();   
-        alert("Awesome, you win. Now try next word!")
+        showimage(pickedword);
+        // newgame();   
+        
     }
 }
 
@@ -134,19 +145,3 @@ document.onkeypress = function(event)
 }
 
 
-//Pseudocode for image displaying
-
-//for displaying image matching to the word we can user key, value pair in the array and can loop through when we need to 
-//display text according to user guesses or image of matching word as value of key name 
-// we can make array as like follows
-// var wordlist =[
-//     {name: 'apple', image: 'assets/images/apple.jpg'},
-//     {name: 'bananas', image: 'assets/images/bananas.jpg'},
-//     {name: 'grapes', image: 'assets/images/grapes.jpg'},
-//     {name: 'orange', image: 'assets/images/orange.jpg'},
-//     {name: 'peach', image: 'assets/images/peach.jpg'},
-//     {name: 'plump', image: 'assets/images/plump.jpg'},
-//     {name: 'raspberry', image: 'assets/images/raspberry.jpg'},
-//     {name: 'strawberry', image: 'assets/images/strawberry.jpg'},
-//     {name: 'blackberry', image: 'assets/images/blackberries.jpg'},   
-// ]
