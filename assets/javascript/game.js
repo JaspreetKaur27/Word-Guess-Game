@@ -13,7 +13,7 @@ var $losses = document.getElementById('losses');
 
 
 //Created local variables to do JAvascript Functionality
-var wordlist= ['apple','bananas','grapes','peach','pineapple','strawberry', 'blackberry', 'blueberry','plump'];
+var wordlist= ['apple','bananas','grapes','peach','pineapple','strawberry', 'blackberries', 'blueberries','plump','raspberry'];
 
 
 
